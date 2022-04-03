@@ -1,0 +1,19 @@
+﻿<Window x:Class="AgreementWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AgreementWPF"
+        mc:Ignorable="d"
+        Title="Договоры" Height="450" Width="550">
+    <Grid>        
+            <DataGrid x:Name="DataGridAgreement" AutoGenerateColumns="False" >
+                <DataGrid.Columns >
+                    <DataGridTextColumn x:Name="DGId" Header="Номер договора" Binding= "{Binding Path=Id}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="DGDateCreate" Header="Дата создания" Binding="{Binding DateCreate, ConverterCulture= ru-Ru,StringFormat=\{0:d\}}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="DGDateUpdate"  Header="Дата обновления" Binding="{Binding DateUpdate, ConverterCulture= ru-Ru, StringFormat=\{0:d\}}" IsReadOnly="True"/>
+                    <DataGridCheckBoxColumn Header="Актуальность договора" Binding="{Binding Path=IsChecked}" IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </DataGrid>       
+    </Grid>
+</Window>
